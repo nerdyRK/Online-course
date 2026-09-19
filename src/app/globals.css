@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #eaf4fb;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.15) 0%, transparent 45%),
+                 radial-gradient(circle at 85% 75%, rgba(29, 78, 216, 0.12) 0%, transparent 50%),
+                 #eaf4fb;
+  --text-main: #0b2545;
+  --text-muted: #334155;
+  --accent-blue: #1d4ed8;
+  --accent-sky: #0ea5e9;
+  --accent-saffron: #f59e0b;
+  --accent-saffron-hover: #d97706;
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(29, 78, 216, 0.14);
+  --glass-header: rgba(234, 244, 251, 0.85);
+  --chip-bg: rgba(29, 78, 216, 0.08);
+  --shadow-color: rgba(11, 37, 69, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg-main: #07111e;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.18) 0%, transparent 45%),
+                 radial-gradient(circle at 85% 75%, rgba(29, 78, 216, 0.25) 0%, transparent 50%),
+                 #07111e;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent-blue: #3b82f6;
+  --accent-sky: #38bdf8;
+  --accent-saffron: #fbbf24;
+  --accent-saffron-hover: #f59e0b;
+  --card-bg: rgba(15, 29, 52, 0.85);
+  --card-border: rgba(59, 130, 246, 0.22);
+  --glass-header: rgba(7, 17, 30, 0.88);
+  --chip-bg: rgba(59, 130, 246, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-sky);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Glassmorphism & UI Helpers */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px -10px var(--shadow-color);
+}
+
+.glass-header {
+  background: var(--glass-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.focus-visible-ring {
+  outline: none;
+}
+.focus-visible-ring:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
